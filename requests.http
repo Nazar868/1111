@@ -1,0 +1,46 @@
+### GET all
+GET http://localhost:3000/announcements
+
+### search
+GET http://localhost:3000/announcements?search=iphone
+
+### sort + page
+GET http://localhost:3000/announcements?sort=oldest&page=2
+
+### GET by id
+GET http://localhost:3000/announcements/1
+
+### POST valid
+POST http://localhost:3000/announcements
+Content-Type: application/json
+
+{
+  "title": "iPhone 13",
+  "description": "Good condition phone",
+  "price": 20000,
+  "category": "sale",
+  "contactInfo": "0991234567"
+}
+
+### POST invalid
+POST http://localhost:3000/announcements
+Content-Type: application/json
+
+{
+  "title": "a",
+  "description": "bad",
+  "price": -1,
+  "category": "xxx",
+  "contactInfo": "1"
+}
+
+### PATCH
+PATCH http://localhost:3000/announcements/1
+Content-Type: application/json
+
+{
+  "price": 15000
+}
+
+### DELETE
+DELETE http://localhost:3000/announcements/1
